@@ -1,0 +1,10 @@
+{
+    "name": "Automa.Entities.Unity.Autofac",
+    "references": [
+        "Automa.Entities.Unity"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
+}
