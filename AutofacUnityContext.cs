@@ -23,12 +23,14 @@ namespace Automa.Entities.Unity.Autofac
 
         protected virtual void BuildSystems()
         {
+            SystemTreeBuilder builder = new SystemTreeBuilder();
             foreach (var system in GetType().Assembly
                 .GetAllSystems(type => type.GetCustomAttribute<IgnoreAttribute>() == null))
             {
                 Container.Inject(system);
-                SystemManager.AddSystem(system);
+                builder.AddSystem(system);
             }
+            builder.Build(SystemManager);
         }
     }
 }
